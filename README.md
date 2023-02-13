@@ -1,30 +1,30 @@
-# first-extension
+# rest-cache
 
 [![LoopBack](https://github.com/loopbackio/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
 
 ## Installation
 
-Install FirstExtensionComponent using `npm`;
+Install RestCacheComponent using `npm`;
 
 ```sh
-$ [npm install | yarn add] first-extension
+$ [npm install | yarn add] rest-cache
 ```
 
 ## Basic Use
 
-Configure and load FirstExtensionComponent in the application constructor
+Configure and load RestCacheComponent in the application constructor
 as shown below.
 
 ```ts
-import {FirstExtensionComponent, FirstExtensionComponentOptions, DEFAULT_FIRST_EXTENSION_OPTIONS} from 'first-extension';
+import {RestCacheComponent, RestCacheComponentOptions, DEFAULT_REST_CACHE_OPTIONS} from 'rest-cache';
 // ...
 export class MyApplication extends BootMixin(ServiceMixin(RepositoryMixin(RestApplication))) {
   constructor(options: ApplicationConfig = {}) {
-    const opts: FirstExtensionComponentOptions = DEFAULT_FIRST_EXTENSION_OPTIONS;
-    this.configure(FirstExtensionComponentBindings.COMPONENT).to(opts);
+    const opts: RestCacheComponentOptions = DEFAULT_REST_CACHE_OPTIONS;
+    this.configure(RestCacheComponentBindings.COMPONENT).to(opts);
       // Put the configuration options here
     });
-    this.component(FirstExtensionComponent);
+    this.component(RestCacheComponent);
     // ...
   }
   // ...
