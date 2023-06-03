@@ -7,7 +7,7 @@
 Install RestCacheComponent using `npm`;
 
 ```sh
-$ [npm install | yarn add] rest-cache
+$ [npm install | yarn add] @aaqilniz/rest-cache
 ```
 
 ## Basic Use
