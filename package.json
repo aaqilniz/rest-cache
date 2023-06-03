@@ -1,6 +1,6 @@
 {
   "name": "@aaqilniz/rest-cache",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This is a loopback 4 based extension that implements caching mechanism.",
   "keywords": [
     "loopback-extension",

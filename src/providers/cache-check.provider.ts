@@ -1,13 +1,13 @@
-import { Cache, CacheStrategy, CacheCheckFn } from '../types';
-import { inject, Provider, Getter } from '@loopback/core';
-import { CacheBindings } from '../keys';
+import {Getter, Provider, inject} from '@loopback/core';
 import {Request} from '@loopback/rest';
+import {CacheBindings} from '../keys';
+import {Cache, CacheCheckFn, CacheStrategy} from '../types';
 
 export class CacheCheckProvider implements Provider<CacheCheckFn> {
   constructor(
     @inject.getter(CacheBindings.CACHE_STRATEGY)
     readonly getCacheStrategy: Getter<CacheStrategy>
-  ) {}
+  ) { }
 
   value(): CacheCheckFn {
     return request => this.action(request);
@@ -20,6 +20,6 @@ export class CacheCheckProvider implements Provider<CacheCheckFn> {
       return undefined;
     }
 
-    return await cacheStrategy.check(request.path);
+    return await cacheStrategy.check(request.url);
   }
 }
