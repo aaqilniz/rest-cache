@@ -1,11 +1,12 @@
 import {BindingKey, MetadataAccessor} from '@loopback/core';
 import {CacheMetadata} from './decorators/cache.decorator';
-import {CacheCheckFn, CacheSetFn, CacheStrategy} from './types';
+import {CacheCheckFn, CacheInvalidateFn, CacheSetFn, CacheStrategy} from './types';
 export namespace CacheBindings {
 
   export const CACHE_STRATEGY = BindingKey.create<CacheStrategy | undefined>('cache.strategy');
   export const CACHE_CHECK_ACTION = BindingKey.create<CacheCheckFn | undefined>('cache.check');
   export const CACHE_SET_ACTION = BindingKey.create<CacheSetFn | undefined>('cache.set');
+  export const CACHE_INVALIDATE_ACTION = BindingKey.create<CacheInvalidateFn | undefined>('cache.invalidate');
   export const METADATA = BindingKey.create<CacheMetadata | undefined>(
     'check.operationMetadata',
   );
