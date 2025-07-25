@@ -7,10 +7,14 @@ export interface CacheCheckFn {
 export interface CacheSetFn {
   (request: Request, result: any): Promise<void>;
 }
+export interface CacheInvalidateFn {
+  (key: string): Promise<void>;
+}
 
 export interface CacheStrategy {
   check(key: string): Promise<Cache | undefined>;
   set(path: string, result: any): Promise<void>;
+  invalidate?(key: string): Promise<void>;
 }
 
 export interface Cache {
