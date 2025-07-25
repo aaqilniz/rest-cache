@@ -14,7 +14,7 @@ export interface CacheInvalidateFn {
 export interface CacheStrategy {
   check(key: string): Promise<Cache | undefined>;
   set(path: string, result: any): Promise<void>;
-  invalidate(key: string): Promise<void>;
+  invalidate?(key: string): Promise<void>;
 }
 
 export interface Cache {

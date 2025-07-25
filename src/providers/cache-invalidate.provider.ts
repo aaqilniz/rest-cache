@@ -15,7 +15,7 @@ export class CacheInvalidateProvider implements Provider<CacheInvalidateFn> {
   async action(key: string): Promise<void> {
     const cacheStrategy = await this.getCacheStrategy();
 
-    if (!cacheStrategy) {
+    if (!cacheStrategy || !cacheStrategy.invalidate) {
       return;
     }
 
